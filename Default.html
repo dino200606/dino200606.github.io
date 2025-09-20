@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///D:/UnrealProjects/dino200606/Defaultl.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title _msttexthash="785343" _msthash="0">BIGMONSTER - Top game development</title>
+    <!-- <link rel="stylesheet" href="./Default_files/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+		.fixed-size-img {
+		width: 40px;      /* 设置宽度为40像素 */
+		height: 32px;     /* 设置高度为32像素 */
+		object-fit: cover; /* 保持图片比例并填充容器 */
+		display: block;   /* 确保图片作为块级元素显示 */
+		margin: 0 auto;   /* 水平居中显示 */
+		}
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --dark: #2d3436;
+            --light: #dfe6e9;
+            --success: #00b894;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1a1a2e;
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 导航栏样式 */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 32px;
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* 英雄区域样式 */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            background: radial-gradient(circle at top right, #16213e, #0f3460, #1a1a2e);
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fd79a8, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #b2becd;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(108, 92, 231, 0.6);
+        }
+        
+        /* 产品展示样式 */
+        .products {
+            padding: 100px 0;
+            background-color: #16213e;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .section-title p {
+            color: #b2becd;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #1e3a5f, #16213e);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .product-content p {
+            color: #b2becd;
+            margin-bottom: 20px;
+        }
+        
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .product-features span {
+            background: rgba(108, 92, 231, 0.2);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .product-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .product-btn:hover {
+            background: var(--accent);
+        }
+        
+        /* 公司介绍样式 */
+        .about {
+            padding: 100px 0;
+            background-color: #1a1a2e;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .about-text p {
+            color: #b2becd;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* 页脚样式 */
+        footer {
+            background-color: #0f3460;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #b2becd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b2becd;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                transition: left 0.3s;
+                padding: 20px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header style="background: rgba(26, 26, 46, 0.95); box-shadow: none;">
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-dragon logo-icon"></i>
+                <h1 _msttexthash="115206" _msthash="1">BIGMONSTER</h1>
+            </div>
+            <button class="nav-btn" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#home" _msttexthash="43979" _msthash="2">Home</a></li>
+                    <li><a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#products" _msttexthash="120744" _msthash="3">products</a></li>
+                    <li><a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#about" _msttexthash="98579" _msthash="4">About us</a></li>
+                    <li><a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#contact" _msttexthash="138229" _msthash="5">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2 _msttexthash="887874" _msthash="6">Create amazing gaming experiences</h2>
+            <p _msttexthash="20461597" _msthash="7">With a focus on developing high-quality, immersive games, BIGMONSTER is on a mission to deliver unforgettable adventures to players through innovative gameplay combined with stunning visuals.</p>
+            <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#products" class="btn" _msttexthash="293397" _msthash="8">Explore our games</a>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2 _msttexthash="428896" _msthash="9">Our flagship products</h2>
+                <p _msttexthash="9028734" _msthash="10">Discover the world of games meticulously crafted by BIGMONSTER, where each game is the culmination of our passion and innovation</p>
+            </div>
+            <div class="product-grid">
+                <!-- 产品1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="./Default_files/dontcrush.jpg" alt="Screenshots of the game" _mstalt="11013678" _msthash="11">
+                    </div>
+                    <div class="product-content">
+                        <h3 _msttexthash="134030" _msthash="12">Dont Crush</h3>
+                        <p _msttexthash="38712544" _msthash="13">Let's embark on an exciting jumping adventure! In each level, you'll need to jump nimbly over various obstacles, skillfully dodge blocking monsters, and collect sweet fruits along the way. Once you successfully complete each level, you'll unlock more exciting challenges!</p>
+                        <div class="product-features">
+                            <span _msttexthash="99151" _msthash="14">leisure</span>
+                            <span _msttexthash="100776" _msthash="15">venture</span>
+                            <span _msttexthash="137527" _msthash="16">cooperate</span>
+                            <span _msttexthash="356629" _msthash="17">Multiplayer online</span>
+                        </div>
+                        <!-- <a href="#" class="product-btn">了解更多</a> -->
+                    </div>
+                </div>
+                
+                <!-- 产品2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="./Default_files/cropout.png" alt="Screenshot of Dragon&#39;s Legacy game" _mstalt="29585075" _msthash="18">
+                    </div>
+                    <div class="product-content">
+                        <h3 _msttexthash="111514" _msthash="19">MyFarmer</h3>
+                        <p _msttexthash="6477211" _msthash="20">Planting, collecting, spring plowing and autumn planting, and experience the pastoral life you yearn for.</p>
+                        <div class="product-features">
+                            <span _msttexthash="99151" _msthash="21">leisure</span>
+                            <span _msttexthash="213863" _msthash="22">fantasy world</span>
+                            <span _msttexthash="427063" _msthash="23">Strategy development</span>
+                            <span _msttexthash="136838" _msthash="24">Operation</span>
+                        </div>
+                        <!-- <a href="#" class="product-btn">了解更多</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 公司介绍 -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 _msttexthash="225628" _msthash="25">About BIGMONSTER</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 _msttexthash="1224665" _msthash="26">Create extraordinary gaming experiences</h2>
+                    <p _msttexthash="64769406" _msthash="27">We believe that gaming is the ultimate interactive medium, capable of bringing people together, telling memorable stories, and providing experiences that cannot be obtained anywhere else. Whether it's through our expansive world-building, innovative gameplay mechanics, or deep characterization, we strive to push the boundaries of what's possible.</p>
+                    <!-- <a href="#" class="btn">加入我们</a> -->
+                </div>
+                <div class="about-image">
+                    <img src="./Default_files/photo-1593305841991-05d297789c36" alt="BIGMONSTER team working photos" _mstalt="41535234" _msthash="28">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 _msttexthash="98579" _msthash="29">About us</h3>
+                    <p _msttexthash="24605243" _msthash="30">BIGMONSTER is committed to developing high-quality games that provide players with an immersive and memorable gaming experience. Our passion is creating games that spark the imagination and bring people together.</p>
+                    <div class="social-links">
+                        <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#"><i class="fab fa-twitter"></i></a>
+                        <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#"><i class="fab fa-instagram"></i></a>
+                        <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#"><i class="fab fa-youtube"></i></a>
+                        <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 _msttexthash="154401" _msthash="31">Quick Links</h3>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#home" _msttexthash="43979" _msthash="32">Home</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#products" _msttexthash="120744" _msthash="33">products</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#about" _msttexthash="98579" _msthash="34">About us</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#contact" _msttexthash="138229" _msthash="35">Contact us</a>
+                </div>
+                <div class="footer-column">
+                    <h3 _msttexthash="134992" _msthash="36">In the tank</h3>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#" _msttexthash="633373" _msthash="37">frequently asked questions</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#" _msttexthash="415753" _msthash="38">System requirements:</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#" _msttexthash="306852" _msthash="39">customer support</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#" _msttexthash="109954" _msthash="40">feedback</a>
+                    <a href="file:///D:/UnrealProjects/dino200606/Defaultl.html#" _msttexthash="231452" _msthash="41">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h3 _msttexthash="138229" _msthash="42">Contact us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i><font _mstmutation="1" _msttexthash="2596724" _msthash="43"> No. 16, Daxing 2nd Road, Shenzhen Market, Guangdong Province, China</font></p>
+					<!-- <p><i class="fas fa-phone"></i> +86 21 1234-5678</p> -->
+                    <p><i class="fas fa-envelope"></i><font _mstmutation="1" _msttexthash="212745" _msthash="44"> 34165658@qq.com</font></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p _msttexthash="1634932" _msthash="45">© 2025 BIGMONSTER. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端导航菜单切换
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+        
+        // 滚动时导航栏效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+
+</body></html>

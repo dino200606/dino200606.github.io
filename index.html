@@ -351,6 +351,114 @@
             color: var(--accent);
         }
         
+        /* Contact form styles */
+        .contact-form {
+            margin-top: 20px;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+        
+        .contact-form.show {
+            display: block;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .email-trigger {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .email-trigger:hover {
+            color: var(--accent) !important;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: var(--light);
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(178, 190, 205, 0.6);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .contact-form button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+        
+        .contact-form button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: rgba(0, 184, 148, 0.2);
+            color: var(--success);
+            border: 1px solid var(--success);
+            display: block;
+        }
+        
+        .form-message.error {
+            background: rgba(253, 121, 168, 0.2);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            display: block;
+        }
+        
         .social-links {
             display: flex;
             gap: 15px;
@@ -562,7 +670,18 @@
                     <h3 _msttexthash="138229" _msthash="42">Contact us</h3>
                     <p><i class="fas fa-map-marker-alt"></i><font _mstmutation="1" _msttexthash="2596724" _msthash="43"> No. 16, Daxing 2nd Road, Shenzhen Market, Guangdong Province, China</font></p>
 					<!-- <p><i class="fas fa-phone"></i> +86 21 1234-5678</p> -->
-                    <p><i class="fas fa-envelope"></i><font _mstmutation="1" _msttexthash="212745" _msthash="44"> 34165658@qq.com</font></p>
+                    <p style="white-space: nowrap;"><i class="fas fa-envelope email-trigger" onclick="toggleContactForm()" style="color: var(--light); transition: color 0.3s; margin-right: 8px;"></i> <span id="emailAddress" class="email-trigger" onclick="toggleContactForm()" style="color: var(--light); transition: color 0.3s;">34165658@qq.com</span></p>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm" onsubmit="sendEmail(event)">
+                            <input type="text" id="senderName" placeholder="Your Name" required>
+                            <input type="email" id="senderEmail" placeholder="Your Email" required>
+                            <input type="text" id="subject" placeholder="Subject" required>
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                            <button type="submit" id="submitBtn">Send Message</button>
+                            <div id="formMessage" class="form-message"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
@@ -610,6 +729,137 @@
                 header.style.boxShadow = 'none';
             }
         });
+        
+        // Toggle contact form visibility
+        function toggleContactForm() {
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.classList.toggle('show');
+                
+                // Scroll to form if showing
+                if (contactForm.classList.contains('show')) {
+                    setTimeout(function() {
+                        contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                }
+            }
+        }
+        
+        // Email sending function using Formspree
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            const form = document.getElementById('contactForm');
+            
+            // Get form values
+            const name = document.getElementById('senderName').value;
+            const email = document.getElementById('senderEmail').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.className = 'form-message';
+            formMessage.style.display = 'none';
+            
+            // Formspree endpoint - Replace with your Formspree form endpoint
+            // Get it from https://formspree.io/ after creating a form
+            // Format: https://formspree.io/f/YOUR_FORM_ID
+            const formspreeEndpoint = 'https://formspree.io/f/xanaydky';
+            
+            // Check if Formspree is configured
+            if (formspreeEndpoint.includes('YOUR_FORM_ID')) {
+                // Formspree not configured - use mailto as fallback
+                const mailtoLink = 'mailto:34165658@qq.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                window.location.href = mailtoLink;
+                
+                formMessage.innerHTML = '⚠️ Email service not configured. Opening email client...<br><small>To enable in-page sending, configure Formspree (see QUICK_SETUP.md) or contact us at 34165658@qq.com</small>';
+                formMessage.className = 'form-message';
+                formMessage.style.display = 'block';
+                formMessage.style.background = 'rgba(108, 92, 231, 0.2)';
+                formMessage.style.color = 'var(--secondary)';
+                formMessage.style.border = '1px solid var(--secondary)';
+                
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                setTimeout(function() {
+                    formMessage.style.display = 'none';
+                }, 8000);
+                return;
+            }
+            
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('subject', subject);
+            formData.append('message', message);
+            formData.append('_to', '34165658@qq.com');  // Recipient email
+            formData.append('_subject', 'Contact Form: ' + subject);  // Email subject
+            
+            // Send email using Formspree
+            fetch(formspreeEndpoint, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(function(response) {
+                return response.json().then(function(data) {
+                    if (response.ok) {
+                        // Success
+                        formMessage.textContent = 'Message sent successfully! We will get back to you soon.';
+                        formMessage.className = 'form-message success';
+                        formMessage.style.display = 'block';
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                        
+                        // Hide message and form after 3 seconds
+                        setTimeout(function() {
+                            formMessage.style.display = 'none';
+                            const contactForm = document.querySelector('.contact-form');
+                            if (contactForm) {
+                                contactForm.classList.remove('show');
+                            }
+                        }, 3000);
+                    } else {
+                        // Formspree returned an error
+                        let errorMsg = 'Failed to send message. ';
+                        if (data.error) {
+                            errorMsg += data.error;
+                        } else {
+                            errorMsg += 'Please try again or contact us directly at 34165658@qq.com';
+                        }
+                        throw new Error(errorMsg);
+                    }
+                });
+            })
+            .catch(function(error) {
+                // Error
+                console.error('Error:', error);
+                let errorMessage = 'Failed to send message. ';
+                
+                if (error.message && error.message.includes('Failed to send')) {
+                    errorMessage = error.message;
+                } else if (error.message && error.message.includes('Network')) {
+                    errorMessage += 'Network error. Please check your connection and try again.';
+                } else {
+                    errorMessage += 'Please configure Formspree (see EMAIL_SETUP.md) or contact us directly at 34165658@qq.com';
+                }
+                
+                formMessage.textContent = errorMessage;
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
+        }
     </script>
 
 </body></html>

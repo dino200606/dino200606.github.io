@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Bullet West - 游戏视频展示 | BIGMONSTER</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --dark: #2d3436;
+            --light: #dfe6e9;
+            --success: #00b894;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation bar styles */
+        header {
+            background-color: rgba(26, 26, 46, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #fd79a8, #6c5ce7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-right: 10px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-icon:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Main content area */
+        .main-content {
+            padding: 120px 0 60px;
+            min-height: 100vh;
+        }
+
+        .video-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .video-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fd79a8, #6c5ce7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .video-description {
+            font-size: 1.2rem;
+            color: #b2becd;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(145deg, #1e3a5f, #16213e);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .video-controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .control-btn {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+        }
+
+        .control-btn i {
+            margin-right: 8px;
+        }
+
+        /* Game information area */
+        .game-info {
+            background: linear-gradient(145deg, #1e3a5f, #16213e);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .game-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .game-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(108, 92, 231, 0.2);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .feature-item p {
+            color: #b2becd;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .nav-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark);
+                transition: left 0.3s;
+                padding: 20px;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .video-title {
+                font-size: 2rem;
+            }
+
+            .video-description {
+                font-size: 1rem;
+            }
+
+            .game-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="BIGMONSTER Logo" class="logo-icon">
+                <h1>BIGMONSTER</h1>
+            </div>
+            <button class="nav-btn" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="index.html#products">游戏作品</a></li>
+                    <li><a href="index.html#about">关于我们</a></li>
+                    <li><a href="index.html#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="container">
+            <section class="video-section">
+                <h1 class="video-title">Last Bullet West 游戏视频</h1>
+                <p class="video-description">
+                    体验一场扣人心弦的西部战术冒险！作为法外之徒的领袖，你需要在三阶段的艰难探险中做出抉择，管理团队协同，利用有限的弹药和精准的对决在这片残酷的土地上生存。策略高于一切。
+                </p>
+
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <video id="gameVideo" controls preload="metadata" poster="imgs/lastbulletwest.jpg">
+                            <source src="videos/lastbulletwest.mp4" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+
+                    <div class="video-controls">
+                        <button class="control-btn" onclick="playVideo()">
+                            <i class="fas fa-play"></i>
+                            播放
+                        </button>
+                        <button class="control-btn" onclick="pauseVideo()">
+                            <i class="fas fa-pause"></i>
+                            暂停
+                        </button>
+                        <button class="control-btn" onclick="toggleFullscreen()">
+                            <i class="fas fa-expand"></i>
+                            全屏
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="game-info">
+                <h3>游戏特色</h3>
+                <div class="game-features">
+                    <div class="feature-item">
+                        <i class="fas fa-chess"></i>
+                        <h4>战术策略</h4>
+                        <p>强调策略部署而非单纯的数值碾压，每一颗子弹都至关重要</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-redo"></i>
+                        <h4>Roguelike 机制</h4>
+                        <p>随机生成的关卡和三阶段探险，提供极高的重玩价值</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>盟约与抉择</h4>
+                        <p>处理错综复杂的派系关系，做出影响深远的不可逆选择</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-skull"></i>
+                        <h4>团队协同</h4>
+                        <p>深度武器与角色技能搭配，打造属于你的最强法外团伙</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const video = document.getElementById('gameVideo');
+
+        // Play video
+        function playVideo() {
+            video.play();
+        }
+
+        // Pause video
+        function pauseVideo() {
+            video.pause();
+        }
+
+        // Toggle fullscreen
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                video.requestFullscreen().catch(err => {
+                    console.log('无法进入全屏模式:', err);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Mobile navigation menu toggle
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Navigation bar effect on scroll
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(26, 26, 46, 0.98)';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(26, 26, 46, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Video loading completion handling
+        video.addEventListener('loadedmetadata', function () {
+            console.log('Video metadata loaded successfully');
+        });
+
+        // Video playback error handling
+        video.addEventListener('error', function (e) {
+            console.error('Video playback error:', e);
+            alert('视频加载失败，请检查视频文件是否存在');
+        });
+    </script>
+</body>
+
+</html>

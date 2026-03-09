@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Last Bullet West - Game Video Showcase | BIGMONSTER</title>
+    <title>Last Bullet West - 游戏视频展示 | BIGMONSTER</title>
     <link rel="stylesheet" href="css/all.min.css">
     <style>
         :root {
@@ -37,7 +37,7 @@
             padding: 0 20px;
         }
 
-        /* Navigation bar styles */
+        /* 导航栏样式 */
         header {
             background-color: rgba(26, 26, 46, 0.95);
             padding: 20px 0;
@@ -63,7 +63,7 @@
         .logo h1 {
             font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(90deg, #fd79a8, #6c5ce7);
+            background: linear-gradient(45deg, var(--accent), var(--primary));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -129,7 +129,7 @@
             cursor: pointer;
         }
 
-        /* Main content area */
+        /* 主体内容区域 */
         .main-content {
             padding: 120px 0 60px;
             min-height: 100vh;
@@ -214,7 +214,7 @@
             margin-right: 8px;
         }
 
-        /* Game information area */
+        /* 游戏信息区域 */
         .game-info {
             background: linear-gradient(145deg, #1e3a5f, #16213e);
             border-radius: 20px;
@@ -262,7 +262,7 @@
             font-size: 0.95rem;
         }
 
-        /* Responsive design */
+        /* 响应式设计 */
         @media (max-width: 768px) {
             .nav-btn {
                 display: block;
@@ -307,7 +307,7 @@
 </head>
 
 <body>
-    <!-- Navigation bar -->
+    <!-- 导航栏 -->
     <header>
         <div class="container header-content">
             <div class="logo">
@@ -319,73 +319,71 @@
             </button>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#products">Products</a></li>
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="Defaultl2.html">首页</a></li>
+                    <li><a href="Defaultl2.html#products">游戏作品</a></li>
+                    <li><a href="Defaultl2.html#about">关于我们</a></li>
+                    <li><a href="Defaultl2.html#contact">联系我们</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main content -->
+    <!-- 主体内容 -->
     <main class="main-content">
         <div class="container">
             <section class="video-section">
-                <h1 class="video-title">Last Bullet West Game Video</h1>
+                <h1 class="video-title">Last Bullet West 游戏视频</h1>
                 <p class="video-description">
-                    Experience a gripping Western tactical adventure! As the leader of outlaws, you'll need to make
-                    choices through a three-stage arduous expedition, manage team synergy, and survive in this harsh
-                    land with limited ammo and precise duels. Strategy is everything.
+                    体验一场扣人心弦的西部战术冒险！作为法外之徒的领袖，你需要在三阶段的艰难探险中做出抉择，管理团队协同，利用有限的弹药和精准的对决在这片残酷的土地上生存。策略高于一切。
                 </p>
 
                 <div class="video-container">
                     <div class="video-wrapper">
                         <video id="gameVideo" controls preload="metadata" poster="imgs/lastbulletwest.jpg">
                             <source src="videos/lastbulletwest.mp4" type="video/mp4">
-                            Your browser does not support video playback.
+                            您的浏览器不支持视频播放。
                         </video>
                     </div>
 
                     <div class="video-controls">
                         <button class="control-btn" onclick="playVideo()">
                             <i class="fas fa-play"></i>
-                            Play
+                            播放
                         </button>
                         <button class="control-btn" onclick="pauseVideo()">
                             <i class="fas fa-pause"></i>
-                            Pause
+                            暂停
                         </button>
                         <button class="control-btn" onclick="toggleFullscreen()">
                             <i class="fas fa-expand"></i>
-                            Fullscreen
+                            全屏
                         </button>
                     </div>
                 </div>
             </section>
 
             <section class="game-info">
-                <h3>Game Features</h3>
+                <h3>游戏特色</h3>
                 <div class="game-features">
                     <div class="feature-item">
                         <i class="fas fa-chess"></i>
-                        <h4>Tactical Strategy</h4>
-                        <p>Emphasis on strategic deployment over raw numbers, every bullet counts</p>
+                        <h4>战术策略</h4>
+                        <p>强调策略部署而非单纯的数值碾压，每一颗子弹都至关重要</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-redo"></i>
-                        <h4>Roguelike Mechanics</h4>
-                        <p>Randomly generated levels and three-stage expeditions for high replay value</p>
+                        <h4>Roguelike 机制</h4>
+                        <p>随机生成的关卡和三阶段探险，提供极高的重玩价值</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-handshake"></i>
-                        <h4>Alliances & Choices</h4>
-                        <p>Manage complex faction relations and make impactful irreversible choices</p>
+                        <h4>盟约与抉择</h4>
+                        <p>处理错综复杂的派系关系，做出影响深远的不可逆选择</p>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-skull"></i>
-                        <h4>Team Synergy</h4>
-                        <p>Deep weapon and character skill combinations to build your strongest outlaw gang</p>
+                        <h4>团队协同</h4>
+                        <p>深度武器与角色技能搭配，打造属于你的最强法外团伙</p>
                     </div>
                 </div>
             </section>
@@ -395,33 +393,33 @@
     <script>
         const video = document.getElementById('gameVideo');
 
-        // Play video
+        // 播放视频
         function playVideo() {
             video.play();
         }
 
-        // Pause video
+        // 暂停视频
         function pauseVideo() {
             video.pause();
         }
 
-        // Toggle fullscreen
+        // 切换全屏
         function toggleFullscreen() {
             if (!document.fullscreenElement) {
                 video.requestFullscreen().catch(err => {
-                    console.log('Unable to enter fullscreen mode:', err);
+                    console.log('无法进入全屏模式:', err);
                 });
             } else {
                 document.exitFullscreen();
             }
         }
 
-        // Mobile navigation menu toggle
+        // 移动端导航菜单切换
         document.getElementById('navToggle').addEventListener('click', function () {
             document.getElementById('mainNav').classList.toggle('active');
         });
 
-        // Navigation bar scroll effect
+        // 导航栏滚动效果
         window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -433,15 +431,15 @@
             }
         });
 
-        // Video metadata loaded
+        // 视频加载完成处理
         video.addEventListener('loadedmetadata', function () {
-            console.log('Video metadata loaded successfully');
+            console.log('视频元数据加载成功');
         });
 
-        // Video playback error handling
+        // 视频播放错误处理
         video.addEventListener('error', function (e) {
-            console.error('Video playback error:', e);
-            alert('Video loading failed, please check if the video file exists');
+            console.error('视频播放错误:', e);
+            alert('视频加载失败，请检查视频文件是否存在');
         });
     </script>
 </body>

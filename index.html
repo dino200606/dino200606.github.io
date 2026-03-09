@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <!-- saved from url=(0050)Defaultl.html -->
-<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title _msttexthash="785343" _msthash="0">BIGMONSTER - Top game development</title>
     <!-- <link rel="stylesheet" href="./Default_files/all.min.css"> -->
     <link rel="stylesheet" href="css/all.min.css">
     <style>
-		.fixed-size-img {
-		width: 40px;      /* Set width to 40 pixels */
-		height: 32px;     /* Set height to 32 pixels */
-		object-fit: cover; /* Maintain image aspect ratio and fill container */
-		display: block;   /* Ensure image displays as block element */
-		margin: 0 auto;   /* Center horizontally */
-		}
+        .fixed-size-img {
+            width: 40px;
+            /* Set width to 40 pixels */
+            height: 32px;
+            /* Set height to 32 pixels */
+            object-fit: cover;
+            /* Maintain image aspect ratio and fill container */
+            display: block;
+            /* Ensure image displays as block element */
+            margin: 0 auto;
+            /* Center horizontally */
+        }
+
         :root {
             --primary: #6c5ce7;
             --secondary: #a29bfe;
@@ -22,14 +31,14 @@
             --light: #dfe6e9;
             --success: #00b894;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: #1a1a2e;
             color: var(--light);
@@ -37,13 +46,13 @@
             overflow-x: hidden;
             background-image: linear-gradient(to bottom, #1a1a2e, #16213e);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Navigation bar styles */
         header {
             background-color: rgba(26, 26, 46, 0.95);
@@ -55,18 +64,18 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo h1 {
             font-size: 28px;
             font-weight: 800;
@@ -76,7 +85,7 @@
             -webkit-text-fill-color: transparent;
             margin-left: 10px;
         }
-        
+
         .logo-icon {
             width: 40px;
             height: 40px;
@@ -85,20 +94,20 @@
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
             transition: transform 0.3s ease;
         }
-        
+
         .logo-icon:hover {
             transform: scale(1.05);
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 30px;
         }
-        
+
         nav ul li a {
             color: var(--light);
             text-decoration: none;
@@ -107,11 +116,11 @@
             position: relative;
             padding: 5px 0;
         }
-        
+
         nav ul li a:hover {
             color: var(--accent);
         }
-        
+
         nav ul li a::after {
             content: '';
             position: absolute;
@@ -122,11 +131,11 @@
             background: var(--accent);
             transition: width 0.3s;
         }
-        
+
         nav ul li a:hover::after {
             width: 100%;
         }
-        
+
         .nav-btn {
             display: none;
             background: none;
@@ -135,14 +144,14 @@
             font-size: 24px;
             cursor: pointer;
         }
-        
+
         /* Hero section styles */
         .hero {
             padding: 160px 0 100px;
             text-align: center;
             background: radial-gradient(circle at top right, #16213e, #0f3460, #1a1a2e);
         }
-        
+
         .hero h2 {
             font-size: 3.5rem;
             margin-bottom: 20px;
@@ -150,14 +159,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 40px;
             color: #b2becd;
         }
-        
+
         .btn {
             display: inline-block;
             padding: 14px 30px;
@@ -169,41 +178,41 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
         }
-        
+
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 7px 20px rgba(108, 92, 231, 0.6);
         }
-        
+
         /* Product showcase styles */
         .products {
             padding: 100px 0;
             background-color: #16213e;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
             font-size: 2.5rem;
             margin-bottom: 15px;
             color: white;
         }
-        
+
         .section-title p {
             color: #b2becd;
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 40px;
         }
-        
+
         .product-card {
             background: linear-gradient(145deg, #1e3a5f, #16213e);
             border-radius: 15px;
@@ -211,49 +220,49 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
         }
-        
+
         .product-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .product-img {
             height: 300px;
             overflow: hidden;
             position: relative;
         }
-        
+
         .product-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        
+
         .product-card:hover .product-img img {
             transform: scale(1.05);
         }
-        
+
         .product-content {
             padding: 25px;
         }
-        
+
         .product-content h3 {
             font-size: 1.8rem;
             margin-bottom: 15px;
             color: white;
         }
-        
+
         .product-content p {
             color: #b2becd;
             margin-bottom: 20px;
         }
-        
+
         .product-features {
             display: flex;
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
-        
+
         .product-features span {
             background: rgba(108, 92, 231, 0.2);
             color: var(--secondary);
@@ -263,7 +272,7 @@
             margin-bottom: 10px;
             font-size: 0.9rem;
         }
-        
+
         .product-btn {
             display: inline-block;
             padding: 10px 20px;
@@ -274,114 +283,116 @@
             font-weight: 500;
             transition: background 0.3s;
         }
-        
+
         .product-btn:hover {
             background: var(--accent);
         }
-        
+
         /* Company introduction styles */
         .about {
             padding: 100px 0;
             background-color: #1a1a2e;
         }
-        
+
         .about-content {
             display: flex;
             align-items: center;
             gap: 50px;
         }
-        
+
         .about-text {
             flex: 1;
         }
-        
+
         .about-text h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: white;
         }
-        
+
         .about-text p {
             color: #b2becd;
             margin-bottom: 30px;
             font-size: 1.1rem;
         }
-        
+
         .about-image {
             flex: 1;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-        
+
         .about-image img {
             width: 100%;
             height: auto;
             display: block;
         }
-        
+
         /* Footer styles */
         footer {
             background-color: #0f3460;
             padding: 70px 0 30px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 50px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.3rem;
             margin-bottom: 20px;
             color: white;
         }
-        
-        .footer-column p, .footer-column a {
+
+        .footer-column p,
+        .footer-column a {
             color: #b2becd;
             margin-bottom: 10px;
             display: block;
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-column a:hover {
             color: var(--accent);
         }
-        
+
         /* Contact form styles */
         .contact-form {
             margin-top: 20px;
             display: none;
             animation: slideDown 0.3s ease;
         }
-        
+
         .contact-form.show {
             display: block;
         }
-        
+
         @keyframes slideDown {
             from {
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .email-trigger {
             cursor: pointer;
             user-select: none;
         }
-        
+
         .email-trigger:hover {
             color: var(--accent) !important;
         }
-        
+
         .contact-form input,
         .contact-form textarea {
             width: 100%;
@@ -395,24 +406,24 @@
             font-size: 0.9rem;
             transition: border-color 0.3s, background 0.3s;
         }
-        
+
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
             border-color: var(--accent);
             background: rgba(255, 255, 255, 0.15);
         }
-        
+
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
             color: rgba(178, 190, 205, 0.6);
         }
-        
+
         .contact-form textarea {
             resize: vertical;
             min-height: 100px;
         }
-        
+
         .contact-form button {
             width: 100%;
             padding: 12px;
@@ -424,18 +435,18 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .contact-form button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
         }
-        
+
         .contact-form button:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
-        
+
         .form-message {
             margin-top: 10px;
             padding: 10px;
@@ -444,27 +455,27 @@
             font-size: 0.9rem;
             display: none;
         }
-        
+
         .form-message.success {
             background: rgba(0, 184, 148, 0.2);
             color: var(--success);
             border: 1px solid var(--success);
             display: block;
         }
-        
+
         .form-message.error {
             background: rgba(253, 121, 168, 0.2);
             color: var(--accent);
             border: 1px solid var(--accent);
             display: block;
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -475,35 +486,35 @@
             border-radius: 50%;
             transition: background 0.3s, transform 0.3s;
         }
-        
+
         .social-links a:hover {
             background: var(--primary);
             transform: translateY(-3px);
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #b2becd;
         }
-        
+
         /* Responsive design */
         @media (max-width: 992px) {
             .about-content {
                 flex-direction: column;
             }
-            
+
             .product-grid {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         @media (max-width: 768px) {
             .nav-btn {
                 display: block;
             }
-            
+
             nav {
                 position: fixed;
                 top: 80px;
@@ -514,29 +525,30 @@
                 transition: left 0.3s;
                 padding: 20px;
             }
-            
+
             nav.active {
                 left: 0;
             }
-            
+
             nav ul {
                 flex-direction: column;
             }
-            
+
             nav ul li {
                 margin: 15px 0;
             }
-            
+
             .hero h2 {
                 font-size: 2.5rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation bar -->
     <header style="background: rgba(26, 26, 46, 0.95); box-shadow: none;">
@@ -563,7 +575,9 @@
     <section class="hero" id="home">
         <div class="container">
             <h2 _msttexthash="887874" _msthash="6">Create amazing gaming experiences</h2>
-            <p _msttexthash="20461597" _msthash="7">With a focus on developing high-quality, immersive games, BIGMONSTER is on a mission to deliver unforgettable adventures to players through innovative gameplay combined with stunning visuals.</p>
+            <p _msttexthash="20461597" _msthash="7">With a focus on developing high-quality, immersive games, BIGMONSTER
+                is on a mission to deliver unforgettable adventures to players through innovative gameplay combined with
+                stunning visuals.</p>
             <a href="#products" class="btn" _msttexthash="293397" _msthash="8">Explore our games</a>
         </div>
     </section>
@@ -573,29 +587,36 @@
         <div class="container">
             <div class="section-title">
                 <h2 _msttexthash="428896" _msthash="9">Our flagship products</h2>
-                <p _msttexthash="9028734" _msthash="10">Discover the world of games meticulously crafted by BIGMONSTER, where each game is the culmination of our passion and innovation</p>
+                <p _msttexthash="9028734" _msthash="10">Discover the world of games meticulously crafted by BIGMONSTER,
+                    where each game is the culmination of our passion and innovation</p>
             </div>
             <div class="product-grid">
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-img">
                         <a href="video.html" style="display: block; height: 100%;">
-                            <img src="./Default_files/dontcrush.jpg" alt="Screenshots of the game" _mstalt="11013678" _msthash="11" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="./Default_files/dontcrush.jpg" alt="Screenshots of the game" _mstalt="11013678"
+                                _msthash="11" style="width: 100%; height: 100%; object-fit: cover;">
                         </a>
                     </div>
                     <div class="product-content">
                         <h3 _msttexthash="134030" _msthash="12">Dont Crush</h3>
-                        <p _msttexthash="38712544" _msthash="13">Let's embark on an exciting jumping adventure! In each level, you'll need to jump nimbly over various obstacles, skillfully dodge blocking monsters, and collect sweet fruits along the way. Once you successfully complete each level, you'll unlock more exciting challenges!</p>
+                        <p _msttexthash="38712544" _msthash="13">Let's embark on an exciting jumping adventure! In each
+                            level, you'll need to jump nimbly over various obstacles, skillfully dodge blocking
+                            monsters, and collect sweet fruits along the way. Once you successfully complete each level,
+                            you'll unlock more exciting challenges!</p>
                         <div class="product-features">
                             <span _msttexthash="99151" _msthash="14">leisure</span>
                             <span _msttexthash="100776" _msthash="15">venture</span>
                             <span _msttexthash="137527" _msthash="16">cooperate</span>
                             <span _msttexthash="356629" _msthash="17">Multiplayer online</span>
                         </div>
-                        <a href="video.html" class="product-btn" style="background: linear-gradient(45deg, var(--accent), var(--primary));">Watch Game Video</a>
+                        <a href="video.html" class="product-btn"
+                            style="background: linear-gradient(45deg, var(--accent), var(--primary));">Watch Game
+                            Video</a>
                     </div>
                 </div>
-                
+
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-img">
@@ -603,7 +624,8 @@
                     </div>
                     <div class="product-content">
                         <h3>MyFarmer</h3>
-                        <p>Planting, collecting, spring plowing and autumn planting, and experience the pastoral life you yearn for.</p>
+                        <p>Planting, collecting, spring plowing and autumn planting, and experience the pastoral life
+                            you yearn for.</p>
                         <div class="product-features">
                             <span>leisure</span>
                             <span>fantasy world</span>
@@ -617,19 +639,25 @@
                 <div class="product-card">
                     <div class="product-img">
                         <a href="video_lastbullet.html" style="display: block; height: 100%;">
-                            <img src="imgs/lastbulletwest.jpg" alt="Last Bullet West 游戏截图" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="imgs/lastbulletwest.jpg" alt="Last Bullet West Screenshot"
+                                style="width: 100%; height: 100%; object-fit: cover;">
                         </a>
                     </div>
                     <div class="product-content">
                         <h3>Last Bullet West</h3>
-                        <p>一款西部题材的战术 Roguelike 策略游戏。领导法外之徒进行战斗，处理同盟关系，做出不可逆转的选择。专注于枪战以及武器与角色的协同作用。三阶段的冒险带来高风险与高回报，硬核风格，重玩价值极高。</p>
+                        <p>A Western tactical roguelike strategy game. Lead outlaws in fights, handle alliances, make
+                            irreversible choices, focusing on gunfights and weapon-character synergy. Its three-stage
+                            adventure has high risks/rewards, gritty style, great replay value and strategy over
+                            numbers.</p>
                         <div class="product-features">
-                            <span>战术策略</span>
+                            <span>Tactical Strategy</span>
                             <span>Roguelike</span>
-                            <span>西部风格</span>
-                            <span>团队协同</span>
+                            <span>Western Style</span>
+                            <span>Synergy</span>
                         </div>
-                        <a href="video_lastbullet.html" class="product-btn" style="background: linear-gradient(45deg, var(--accent), var(--primary));">观看游戏视频</a>
+                        <a href="video_lastbullet.html" class="product-btn"
+                            style="background: linear-gradient(45deg, var(--accent), var(--primary));">Watch Game
+                            Video</a>
                     </div>
                 </div>
             </div>
@@ -645,11 +673,16 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2 _msttexthash="1224665" _msthash="26">Create extraordinary gaming experiences</h2>
-                    <p _msttexthash="64769406" _msthash="27">We believe that gaming is the ultimate interactive medium, capable of bringing people together, telling memorable stories, and providing experiences that cannot be obtained anywhere else. Whether it's through our expansive world-building, innovative gameplay mechanics, or deep characterization, we strive to push the boundaries of what's possible.</p>
+                    <p _msttexthash="64769406" _msthash="27">We believe that gaming is the ultimate interactive medium,
+                        capable of bringing people together, telling memorable stories, and providing experiences that
+                        cannot be obtained anywhere else. Whether it's through our expansive world-building, innovative
+                        gameplay mechanics, or deep characterization, we strive to push the boundaries of what's
+                        possible.</p>
                     <!-- <a href="#" class="btn">Join Us</a> -->
                 </div>
                 <div class="about-image">
-                    <img src="./Default_files/photo-1593305841991-05d297789c36" alt="BIGMONSTER team working photos" _mstalt="41535234" _msthash="28">
+                    <img src="./Default_files/photo-1593305841991-05d297789c36" alt="BIGMONSTER team working photos"
+                        _mstalt="41535234" _msthash="28">
                 </div>
             </div>
         </div>
@@ -661,7 +694,9 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3 _msttexthash="98579" _msthash="29">About us</h3>
-                    <p _msttexthash="24605243" _msthash="30">BIGMONSTER is committed to developing high-quality games that provide players with an immersive and memorable gaming experience. Our passion is creating games that spark the imagination and bring people together.</p>
+                    <p _msttexthash="24605243" _msthash="30">BIGMONSTER is committed to developing high-quality games
+                        that provide players with an immersive and memorable gaming experience. Our passion is creating
+                        games that spark the imagination and bring people together.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -687,10 +722,17 @@
                 </div>
                 <div class="footer-column">
                     <h3 _msttexthash="138229" _msthash="42">Contact us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i><font _mstmutation="1" _msttexthash="2596724" _msthash="43"> No. 16, Daxing 2nd Road, Shenzhen Market, Guangdong Province, China</font></p>
-					<!-- <p><i class="fas fa-phone"></i> +86 21 1234-5678</p> -->
-                    <p style="white-space: nowrap;"><i class="fas fa-envelope email-trigger" onclick="toggleContactForm()" style="color: var(--light); transition: color 0.3s; margin-right: 8px;"></i> <span id="emailAddress" class="email-trigger" onclick="toggleContactForm()" style="color: var(--light); transition: color 0.3s;">34165658@qq.com</span></p>
-                    
+                    <p><i class="fas fa-map-marker-alt"></i>
+                        <font _mstmutation="1" _msttexthash="2596724" _msthash="43"> No. 16, Daxing 2nd Road, Shenzhen
+                            Market, Guangdong Province, China</font>
+                    </p>
+                    <!-- <p><i class="fas fa-phone"></i> +86 21 1234-5678</p> -->
+                    <p style="white-space: nowrap;"><i class="fas fa-envelope email-trigger"
+                            onclick="toggleContactForm()"
+                            style="color: var(--light); transition: color 0.3s; margin-right: 8px;"></i> <span
+                            id="emailAddress" class="email-trigger" onclick="toggleContactForm()"
+                            style="color: var(--light); transition: color 0.3s;">34165658@qq.com</span></p>
+
                     <div class="contact-form">
                         <form id="contactForm" onsubmit="sendEmail(event)">
                             <input type="text" id="senderName" placeholder="Your Name" required>
@@ -705,40 +747,41 @@
             </div>
             <div class="copyright">
                 <p _msttexthash="1634932" _msthash="45">© 2025 BIGMONSTER. All rights reserved.</p>
-                <p style="font-size: 0.8rem; margin-top: 10px;">Icons by <a href="https://fontawesome.com" target="_blank" style="color: var(--accent);">Font Awesome</a> (SIL OFL 1.1)</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Icons by <a href="https://fontawesome.com"
+                        target="_blank" style="color: var(--accent);">Font Awesome</a> (SIL OFL 1.1)</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Mobile navigation menu toggle
-        document.getElementById('navToggle').addEventListener('click', function() {
+        document.getElementById('navToggle').addEventListener('click', function () {
             document.getElementById('mainNav').classList.toggle('active');
         });
-        
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-                    
+
                     // Close mobile menu
                     document.getElementById('mainNav').classList.remove('active');
                 }
             });
         });
-        
+
         // Navigation bar effect on scroll
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
                 header.style.background = 'rgba(26, 26, 46, 0.98)';
@@ -748,69 +791,69 @@
                 header.style.boxShadow = 'none';
             }
         });
-        
+
         // Toggle contact form visibility
         function toggleContactForm() {
             const contactForm = document.querySelector('.contact-form');
             if (contactForm) {
                 contactForm.classList.toggle('show');
-                
+
                 // Scroll to form if showing
                 if (contactForm.classList.contains('show')) {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         contactForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                     }, 100);
                 }
             }
         }
-        
+
         // Email sending function using Formspree
         function sendEmail(event) {
             event.preventDefault();
-            
+
             const submitBtn = document.getElementById('submitBtn');
             const formMessage = document.getElementById('formMessage');
             const form = document.getElementById('contactForm');
-            
+
             // Get form values
             const name = document.getElementById('senderName').value;
             const email = document.getElementById('senderEmail').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             // Disable submit button
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             formMessage.className = 'form-message';
             formMessage.style.display = 'none';
-            
+
             // Formspree endpoint - Replace with your Formspree form endpoint
             // Get it from https://formspree.io/ after creating a form
             // Format: https://formspree.io/f/YOUR_FORM_ID
             const formspreeEndpoint = 'https://formspree.io/f/xanaydky';
-            
+
             // Check if Formspree is configured
             if (formspreeEndpoint.includes('YOUR_FORM_ID')) {
                 // Formspree not configured - use mailto as fallback
                 const mailtoLink = 'mailto:34165658@qq.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
                 window.location.href = mailtoLink;
-                
+
                 formMessage.innerHTML = '⚠️ Email service not configured. Opening email client...<br><small>To enable in-page sending, configure Formspree (see QUICK_SETUP.md) or contact us at 34165658@qq.com</small>';
                 formMessage.className = 'form-message';
                 formMessage.style.display = 'block';
                 formMessage.style.background = 'rgba(108, 92, 231, 0.2)';
                 formMessage.style.color = 'var(--secondary)';
                 formMessage.style.border = '1px solid var(--secondary)';
-                
+
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
-                
-                setTimeout(function() {
+
+                setTimeout(function () {
                     formMessage.style.display = 'none';
                 }, 8000);
                 return;
             }
-            
+
             // Prepare form data
             const formData = new FormData();
             formData.append('name', name);
@@ -819,7 +862,7 @@
             formData.append('message', message);
             formData.append('_to', '34165658@qq.com');  // Recipient email
             formData.append('_subject', 'Contact Form: ' + subject);  // Email subject
-            
+
             // Send email using Formspree
             fetch(formspreeEndpoint, {
                 method: 'POST',
@@ -828,57 +871,59 @@
                     'Accept': 'application/json'
                 }
             })
-            .then(function(response) {
-                return response.json().then(function(data) {
-                    if (response.ok) {
-                        // Success
-                        formMessage.textContent = 'Message sent successfully! We will get back to you soon.';
-                        formMessage.className = 'form-message success';
-                        formMessage.style.display = 'block';
-                        form.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
-                        
-                        // Hide message and form after 3 seconds
-                        setTimeout(function() {
-                            formMessage.style.display = 'none';
-                            const contactForm = document.querySelector('.contact-form');
-                            if (contactForm) {
-                                contactForm.classList.remove('show');
-                            }
-                        }, 3000);
-                    } else {
-                        // Formspree returned an error
-                        let errorMsg = 'Failed to send message. ';
-                        if (data.error) {
-                            errorMsg += data.error;
+                .then(function (response) {
+                    return response.json().then(function (data) {
+                        if (response.ok) {
+                            // Success
+                            formMessage.textContent = 'Message sent successfully! We will get back to you soon.';
+                            formMessage.className = 'form-message success';
+                            formMessage.style.display = 'block';
+                            form.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+
+                            // Hide message and form after 3 seconds
+                            setTimeout(function () {
+                                formMessage.style.display = 'none';
+                                const contactForm = document.querySelector('.contact-form');
+                                if (contactForm) {
+                                    contactForm.classList.remove('show');
+                                }
+                            }, 3000);
                         } else {
-                            errorMsg += 'Please try again or contact us directly at 34165658@qq.com';
+                            // Formspree returned an error
+                            let errorMsg = 'Failed to send message. ';
+                            if (data.error) {
+                                errorMsg += data.error;
+                            } else {
+                                errorMsg += 'Please try again or contact us directly at 34165658@qq.com';
+                            }
+                            throw new Error(errorMsg);
                         }
-                        throw new Error(errorMsg);
+                    });
+                })
+                .catch(function (error) {
+                    // Error
+                    console.error('Error:', error);
+                    let errorMessage = 'Failed to send message. ';
+
+                    if (error.message && error.message.includes('Failed to send')) {
+                        errorMessage = error.message;
+                    } else if (error.message && error.message.includes('Network')) {
+                        errorMessage += 'Network error. Please check your connection and try again.';
+                    } else {
+                        errorMessage += 'Please configure Formspree (see EMAIL_SETUP.md) or contact us directly at 34165658@qq.com';
                     }
+
+                    formMessage.textContent = errorMessage;
+                    formMessage.className = 'form-message error';
+                    formMessage.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
                 });
-            })
-            .catch(function(error) {
-                // Error
-                console.error('Error:', error);
-                let errorMessage = 'Failed to send message. ';
-                
-                if (error.message && error.message.includes('Failed to send')) {
-                    errorMessage = error.message;
-                } else if (error.message && error.message.includes('Network')) {
-                    errorMessage += 'Network error. Please check your connection and try again.';
-                } else {
-                    errorMessage += 'Please configure Formspree (see EMAIL_SETUP.md) or contact us directly at 34165658@qq.com';
-                }
-                
-                formMessage.textContent = errorMessage;
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            });
         }
     </script>
 
-</body></html>
+</body>
+
+</html>

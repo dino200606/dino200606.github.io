@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="css/all.min.css">
     <style>
         :root {
-            --primary: #6c5ce7;
-            --secondary: #a29bfe;
-            --accent: #fd79a8;
-            --dark: #2d3436;
-            --light: #dfe6e9;
-            --success: #00b894;
+            --primary: #3b82f6;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --light: #f1f5f9;
+            --success: #10b981;
+            --card-bg: #1e293b;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
-            background-color: #1a1a2e;
+            background-color: var(--dark);
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
-            background-image: linear-gradient(to bottom, #1a1a2e, #16213e);
         }
 
         .container {
@@ -37,16 +38,16 @@
             padding: 0 20px;
         }
 
-        /* 导航栏样式 */
+        /* Navigation bar styles */
         header {
-            background-color: rgba(26, 26, 46, 0.95);
-            padding: 20px 0;
+            background-color: rgba(15, 23, 42, 0.9);
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
         }
 
         .header-content {
@@ -61,26 +62,19 @@
         }
 
         .logo h1 {
-            font-size: 28px;
-            font-weight: 800;
-            background: linear-gradient(45deg, var(--accent), var(--primary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
             margin-left: 10px;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             object-fit: contain;
             margin-right: 10px;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
             transition: transform 0.3s ease;
-        }
-
-        .logo-icon:hover {
-            transform: scale(1.05);
         }
 
         nav ul {
@@ -93,16 +87,17 @@
         }
 
         nav ul li a {
-            color: var(--light);
+            color: #94a3b8;
             text-decoration: none;
             font-weight: 500;
+            font-size: 15px;
             transition: color 0.3s;
             position: relative;
             padding: 5px 0;
         }
 
         nav ul li a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         nav ul li a::after {
@@ -112,7 +107,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
+            background: var(--primary);
             transition: width 0.3s;
         }
 
@@ -129,7 +124,7 @@
             cursor: pointer;
         }
 
-        /* 主体内容区域 */
+        /* Main content area */
         .main-content {
             padding: 120px 0 60px;
             min-height: 100vh;
@@ -142,10 +137,8 @@
 
         .video-title {
             font-size: 3rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #fd79a8, #6c5ce7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            color: #fff;
             margin-bottom: 30px;
         }
 
@@ -160,9 +153,10 @@
             position: relative;
             max-width: 900px;
             margin: 0 auto;
-            background: linear-gradient(145deg, #1e3a5f, #16213e);
+            background-color: var(--card-bg);
             border-radius: 20px;
             padding: 20px;
+            border: 1px solid var(--border);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
@@ -194,15 +188,20 @@
         }
 
         .control-btn {
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background-color: var(--primary);
             color: white;
             border: none;
             padding: 12px 24px;
-            border-radius: 25px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
 
         .control-btn:hover {

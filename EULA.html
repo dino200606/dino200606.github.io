@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终用户许可协议 (EULA) - BIGMONSTER</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .policy-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .toc h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style-type: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.7rem;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .section p, .section ul {
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background-color: rgba(66, 153, 225, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .related-links {
+            margin-top: 1rem;
+        }
+
+        .related-links a {
+            color: var(--secondary-color);
+            margin: 0 0.5rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>最终用户许可协议 (EULA)</h1>
+        <p class="last-updated">最后更新日期：2026年7月18日</p>
+    </header>
+
+    <div class="container">
+        <div class="policy-content">
+            <div class="toc">
+                <h2>目录</h2>
+                <ul>
+                    <li><a href="#acceptance">1. 协议接受</a></li>
+                    <li><a href="#license">2. 许可授予</a></li>
+                    <li><a href="#restrictions">3. 许可限制</a></li>
+                    <li><a href="#ownership">4. 所有权与知识产权</a></li>
+                    <li><a href="#user-content">5. 用户内容与行为规范</a></li>
+                    <li><a href="#updates">6. 更新与修改</a></li>
+                    <li><a href="#disclaimer">7. 免责声明</a></li>
+                    <li><a href="#liability">8. 责任限制</a></li>
+                    <li><a href="#termination">9. 终止</a></li>
+                    <li><a href="#governing-law">10. 适用法律</a></li>
+                    <li><a href="#changes">11. 协议变更</a></li>
+                    <li><a href="#contact">12. 联系我们</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="acceptance">
+                <h2>1. 协议接受</h2>
+                <p>本《最终用户许可协议》（以下简称“本协议”或“EULA”）是您（“用户”或“您”）与 BIGMONSTER（以下简称“我们”）之间就您使用我们的游戏、软件、应用程序、网站及相关服务（统称“软件”或“服务”）所订立的法律协议。</p>
+                <div class="highlight">
+                    <p><strong>重要提示：</strong>安装、访问或使用本软件或服务，即表示您已阅读、理解并同意受本协议约束。如您不同意，请勿安装、访问或使用本软件或服务。</p>
+                </div>
+                <p>若您未达到所在司法辖区的法定成年年龄，须在父母或法定监护人同意并代为接受本协议的前提下使用本服务。</p>
+            </div>
+
+            <div class="section" id="license">
+                <h2>2. 许可授予</h2>
+                <p>在您遵守本协议的前提下，我们授予您一项有限的、非独占的、不可转让的、不可再许可的、可撤销的许可，允许您在您拥有或控制的设备上下载、安装并出于个人、非商业娱乐目的使用本软件。</p>
+                <p>本许可并不向您转让软件的任何所有权。未明确授予您的一切权利，均由 BIGMONSTER 及其许可方保留。</p>
+            </div>
+
+            <div class="section" id="restrictions">
+                <h2>3. 许可限制</h2>
+                <p>除适用法律或本协议明确允许外，您不得：</p>
+                <ul>
+                    <li>复制、修改、改编、翻译或创作本软件的衍生作品</li>
+                    <li>对本软件进行反向工程、反编译、反汇编，或以其他方式试图获取源代码</li>
+                    <li>出售、出租、出借、许可、分发或以其他方式对本软件进行商业利用</li>
+                    <li>删除、篡改或遮盖任何版权、商标或其他专有权利声明</li>
+                    <li>使用作弊、机器人、模组、外挂或其他未经授权的第三方软件干扰服务</li>
+                    <li>利用漏洞、故障或缺陷获取不正当利益或损害其他用户</li>
+                    <li>将本服务用于任何非法、有害或未经授权的目的</li>
+                    <li>干扰或破坏服务或其服务器的完整性与正常运行</li>
+                </ul>
+            </div>
+
+            <div class="section" id="ownership">
+                <h2>4. 所有权与知识产权</h2>
+                <p>软件、服务及所有相关内容——包括但不限于游戏资源、角色、美术、音乐、文字、商标、标识及软件代码——均为 BIGMONSTER 和/或其许可方的专有财产，并受著作权、商标及其他知识产权法律保护。</p>
+                <p>您购买或下载本软件仅获得本协议项下的使用许可，并不构成对软件或其任何内容的出售。</p>
+            </div>
+
+            <div class="section" id="user-content">
+                <h2>5. 用户内容与行为规范</h2>
+                <p>若服务允许您创建、上传或分享内容（如截图、视频片段、反馈或社区帖子），您保留对该内容的所有权，但同时授予 BIGMONSTER 一项全球范围的、免版税的、非独占许可，以便我们为运营和推广服务而使用、复制、修改和展示该等内容。</p>
+                <p>您同意不发布或传播任何非法、辱骂、骚扰、诽谤、侵权或其他不当内容。我们保留删除违规内容以及暂停或终止违规账户的权利。</p>
+            </div>
+
+            <div class="section" id="updates">
+                <h2>6. 更新与修改</h2>
+                <p>我们可能随时提供软件或服务的更新、补丁或修改。继续使用可能需要安装此类更新。在法律允许的范围内，我们也可能在有或无通知的情况下修改、暂停或停止部分服务功能。</p>
+            </div>
+
+            <div class="section" id="disclaimer">
+                <h2>7. 免责声明</h2>
+                <p>在适用法律允许的最大范围内，软件和服务按“现状”和“现有”基础提供，不作任何明示、默示或法定的保证，包括但不限于适销性、特定用途适用性、所有权和不侵权的保证。</p>
+                <p>我们不保证软件或服务不中断、无错误、绝对安全，或不含病毒或其他有害组件。</p>
+            </div>
+
+            <div class="section" id="liability">
+                <h2>8. 责任限制</h2>
+                <p>在适用法律允许的最大范围内，BIGMONSTER 及其关联方、管理人员、员工和许可方，不对因您使用或无法使用软件或服务而产生的任何间接、附带、特殊、后果性或惩罚性损害，或任何利润、数据或商誉损失承担责任。</p>
+                <p>在法律允许的范围内，我们因本协议产生的累计赔偿责任总额，不超过您在索赔前十二（12）个月内就软件或服务实际支付的金额（如有），或一百美元（USD $100）中的较高者。</p>
+                <p>部分司法辖区不允许某些责任限制；在此情况下，我们的责任将在适用法律允许的最大范围内予以限制。</p>
+            </div>
+
+            <div class="section" id="termination">
+                <h2>9. 终止</h2>
+                <p>本协议在终止前持续有效。您可随时通过卸载软件并停止使用服务来终止本协议。</p>
+                <p>若您违反本协议，或我们停止提供服务，我们可立即暂停或终止您对软件或服务的访问，无论是否事先通知。协议终止后，您的许可即告结束，您必须停止使用并删除您所持有的全部软件副本。</p>
+            </div>
+
+            <div class="section" id="governing-law">
+                <h2>10. 适用法律</h2>
+                <p>本协议适用中华人民共和国法律并依其解释，但不包括冲突法规则；若您所在地的强制性消费者保护法律另有规定，从其规定。</p>
+                <p>因本协议引起的或与本协议有关的争议，应首先通过友好协商解决。协商不成的，除适用法律另有要求外，可提交至中国广东省深圳市有管辖权的人民法院解决。</p>
+            </div>
+
+            <div class="section" id="changes">
+                <h2>11. 协议变更</h2>
+                <p>我们可能不时更新本协议。重大变更将在生效前通过网站显著通知或软件内通知告知您。在变更生效后继续使用软件或服务，即视为接受更新后的协议。如您不同意，须停止使用软件和服务。</p>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>12. 联系我们</h2>
+                <p>如您对本最终用户许可协议有任何疑问，请通过以下方式与我们联系：</p>
+                <ul>
+                    <li>电子邮件：34165658@qq.com</li>
+                </ul>
+                <p>关于我们如何处理个人信息，请参阅我们的<a href="PrivacyPolicy.html">隐私政策</a>。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BIGMONSTER. 保留所有权利。</p>
+        <p class="related-links">
+            <a href="PrivacyPolicy.html">隐私政策</a> |
+            <a href="Defaultl2.html">首页</a>
+        </p>
+    </footer>
+
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

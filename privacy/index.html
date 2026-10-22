@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="了解 Rustfield 如何通过第三方账号登录及游戏服务处理个人信息，以及如何请求访问、更正或删除相关信息。">
+    <link rel="alternate" hreflang="zh-CN" href="https://bigmonster.top/privacy/">
+    <link rel="alternate" hreflang="en" href="https://bigmonster.top/privacy/en/">
+    <link rel="canonical" href="https://bigmonster.top/privacy/">
+    <title>隐私政策 - Rustfield | BIGMONSTER</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .language-switch {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .language-switch a {
+            color: white;
+            text-decoration: underline;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .language-switch a:hover {
+            opacity: 1;
+        }
+
+        .policy-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .toc h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style-type: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.7rem;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .section p, .section ul, .section ol {
+            margin-bottom: 1rem;
+        }
+
+        .section ul, .section ol {
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section ul.contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul.contact-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight {
+            background-color: rgba(66, 153, 225, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .related-links {
+            margin-top: 1rem;
+        }
+
+        .related-links a {
+            color: var(--accent-color);
+            margin: 0 0.35rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>隐私政策</h1>
+        <p class="last-updated">生效日期：2026年10月23日 | 最后更新：2026年10月23日</p>
+        <p class="language-switch"><a href="en/" lang="en">English</a></p>
+    </header>
+
+    <div class="container">
+        <div class="policy-content">
+            <div class="toc">
+                <h2>目录</h2>
+                <ul>
+                    <li><a href="#about">1. 关于本政策</a></li>
+                    <li><a href="#information">2. 我们收集的信息</a></li>
+                    <li><a href="#use">3. 我们如何使用信息</a></li>
+                    <li><a href="#third-party-login">4. 第三方账号登录与第三方服务</a></li>
+                    <li><a href="#sharing">5. 信息共享</a></li>
+                    <li><a href="#security">6. 数据保存与安全</a></li>
+                    <li><a href="#rights">7. 数据删除与玩家权利</a></li>
+                    <li><a href="#children">8. 儿童与未成年人</a></li>
+                    <li><a href="#international">9. 国际数据处理</a></li>
+                    <li><a href="#changes">10. 政策更新</a></li>
+                    <li><a href="#contact">11. 联系方式</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="about">
+                <h2>1. 关于本政策</h2>
+                <p>Rustfield（以下简称“本游戏”）是一款通过互联网提供的游戏服务，由独立开发者运营。</p>
+                <p>本政策说明我们在玩家访问或使用本游戏、通过第三方账号登录及使用相关功能时，如何处理个人信息，以及玩家如何请求访问、更正或删除相关信息。</p>
+                <p>本政策适用于 Rustfield 游戏客户端及与游戏运行相关的在线服务。</p>
+            </div>
+
+            <div class="section" id="information">
+                <h2>2. 我们收集的信息</h2>
+                <p>根据您使用的功能及实际技术实现，我们可能处理以下信息：</p>
+
+                <h3>2.1 第三方账号登录信息</h3>
+                <p>当您通过第三方账号登录服务（例如 Facebook、Google、Apple 或其他适用平台）登录时，我们会接收该第三方平台在授权范围内提供给本应用的信息。具体可用的登录方式以游戏实际提供的功能为准；具体信息范围取决于实际申请的权限及登录实现，可能包括：</p>
+                <ul>
+                    <li>第三方平台用户标识，用于识别您在本游戏中的账号。</li>
+                    <li>公开个人资料中的姓名或头像，但仅限应用实际取得这些信息的情况。</li>
+                    <li>电子邮箱地址，但仅限您授权且第三方平台实际提供的情况。</li>
+                </ul>
+                <p>我们不会要求您向 Rustfield 提供第三方账号密码，也不会主动收集您的第三方账号密码。</p>
+
+                <h3>2.2 游戏账号与进度</h3>
+                <p>为提供游戏服务，我们可能处理：</p>
+                <ul>
+                    <li>与第三方平台用户标识关联的 Rustfield 游戏账号标识。</li>
+                    <li>游戏进度、玩家等级及游戏内状态。</li>
+                    <li>为运行游戏所必需的配置、操作和服务器交互记录。</li>
+                </ul>
+                <p>实际保存的数据取决于游戏已经实现的功能。</p>
+
+                <h3>2.3 技术与安全信息</h3>
+                <p>当您访问游戏时，服务器或托管服务可能处理运行服务所需的技术信息，例如 IP 地址、访问时间、设备或浏览器信息、错误日志及安全记录。</p>
+                <p>我们会根据实际使用的基础设施和技术配置确定收集范围，不会将未实际收集的信息描述为已经收集。</p>
+            </div>
+
+            <div class="section" id="use">
+                <h2>3. 我们如何使用信息</h2>
+                <p>我们仅在合理且必要的范围内使用相关信息，包括：</p>
+                <ul>
+                    <li>验证第三方账号登录并识别玩家账号。</li>
+                    <li>创建或关联游戏账号。</li>
+                    <li>保存、同步和恢复游戏进度。</li>
+                    <li>提供游戏运行所需的在线服务。</li>
+                    <li>排查故障、维护服务器和保障账号安全。</li>
+                    <li>检测作弊、欺诈、未经授权的访问及其他安全问题。</li>
+                    <li>响应玩家支持请求、处理数据删除申请。</li>
+                    <li>履行适用法律规定的义务。</li>
+                </ul>
+                <p>我们不会将第三方账号登录信息用于与本政策不符的目的。</p>
+            </div>
+
+            <div class="section" id="third-party-login">
+                <h2>4. 第三方账号登录与第三方服务</h2>
+                <p>本游戏通过第三方账号登录服务提供身份验证功能，具体可用的登录方式以游戏实际提供的功能为准。</p>
+                <p>相关第三方平台会根据其自身的条款和隐私政策处理相关信息。请参阅您所使用的登录平台提供的条款和隐私政策。</p>
+                <p>为运行游戏，我们可能使用服务器托管、数据库或其他技术服务。这些服务可能在提供服务所需的范围内处理游戏数据。</p>
+                <p>我们不会出售玩家的个人信息，也不会将第三方账号登录凭据作为游戏账号密码保存。</p>
+            </div>
+
+            <div class="section" id="sharing">
+                <h2>5. 信息共享</h2>
+                <p>我们不会出售您的个人信息。</p>
+                <p>在以下必要情形中，相关信息可能被提供给其他主体：</p>
+                <ul>
+                    <li>向协助运行游戏的服务器、数据库或基础设施服务提供商提供必要数据。</li>
+                    <li>根据适用法律、有效法律程序或主管机关的合法要求披露信息。</li>
+                    <li>为调查安全事件、防止欺诈或保护玩家及服务安全而依法进行必要披露。</li>
+                </ul>
+                <p>如游戏未来增加广告、分析、支付或其他第三方功能，我们会根据实际数据处理情况更新本政策，并在法律要求时取得必要授权。</p>
+            </div>
+
+            <div class="section" id="security">
+                <h2>6. 数据保存与安全</h2>
+                <p>我们仅在提供游戏服务、维护安全或履行法律义务所必要的期间内保存信息。</p>
+                <p>我们采取合理措施保护数据，防止未经授权的访问、泄露、篡改或丢失。但互联网传输和电子存储无法保证绝对安全。</p>
+                <p>如果我们停止运营游戏，或相关数据不再具有合法、必要的保存目的，我们将按照适用法律处理相关数据。</p>
+            </div>
+
+            <div class="section" id="rights">
+                <h2>7. 数据删除与玩家权利</h2>
+                <p>您可以请求删除与您相关的 Rustfield 账号及个人数据。</p>
+                <p>请通过以下方式提交请求：</p>
+                <p><strong>数据删除联系邮箱：</strong><a href="mailto:34165658@qq.com">34165658@qq.com</a></p>
+                <p>请尽可能提供您的 Rustfield 玩家标识或与账号关联的信息，以便我们识别相关账号。请勿发送密码或其他不必要的敏感信息。</p>
+                <p>我们可能要求您完成合理的身份验证，以防止他人未经授权删除您的数据。</p>
+                <p>我们会根据适用法律处理请求。法律要求保留或允许继续保存的部分记录，可能不会立即删除。</p>
+                <p>有关详细步骤，请参阅本游戏的<a href="../data-deletion/">《数据删除说明》</a>。</p>
+            </div>
+
+            <div class="section" id="children">
+                <h2>8. 儿童与未成年人</h2>
+                <p>本游戏的目标年龄及未成年人使用规则以适用法律及本游戏在各发布渠道公示的年龄分级为准。</p>
+                <p>如果适用法律要求取得监护人同意或采取额外保护措施，我们会按照相关法律处理个人信息。</p>
+                <p>如果您认为未成年人在缺乏必要授权的情况下向我们提供了个人信息，请通过本政策提供的联系方式与我们联系。</p>
+            </div>
+
+            <div class="section" id="international">
+                <h2>9. 国际数据处理</h2>
+                <p>本游戏可能使用位于不同国家或地区的服务器及技术服务。根据实际部署情况，相关数据可能在您所在地区以外处理或存储。</p>
+                <p>如适用法律对跨境数据传输设有要求，我们会依法采取必要措施。</p>
+            </div>
+
+            <div class="section" id="changes">
+                <h2>10. 政策更新</h2>
+                <p>我们可能根据游戏功能、技术实现或适用法律的变化更新本政策。</p>
+                <p>更新后的版本会发布在本页面，并注明最后更新日期。对于法律要求另行通知或取得同意的变更，我们会依法处理。</p>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>11. 联系方式</h2>
+                <ul class="contact-list">
+                    <li><strong>游戏名称：</strong>Rustfield</li>
+                    <li><strong>运营者：</strong>BIGMONSTER</li>
+                    <li><strong>隐私及数据删除联系邮箱：</strong><a href="mailto:34165658@qq.com">34165658@qq.com</a></li>
+                    <li><strong>数据删除说明：</strong><a href="../data-deletion/">https://bigmonster.top/data-deletion/</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BIGMONSTER. 保留所有权利。</p>
+        <p class="related-links">
+            <a href="../terms/">服务条款</a> |
+            <a href="../data-deletion/">数据删除说明</a> |
+            <a href="../EULA.html">用户协议（EULA）</a> |
+            <a href="en/" lang="en">English</a> |
+            <a href="../Defaultl2.html">首页</a>
+        </p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="返回顶部">↑</a>
+
+    <script>
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

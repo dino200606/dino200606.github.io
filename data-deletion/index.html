@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="了解如何申请删除 Rustfield 账号及关联个人数据，以及我们的处理流程、删除范围和删除后的影响。">
+    <link rel="alternate" hreflang="zh-CN" href="https://bigmonster.top/data-deletion/">
+    <link rel="alternate" hreflang="en" href="https://bigmonster.top/data-deletion/en/">
+    <title>数据删除说明 - Rustfield | BIGMONSTER</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .language-switch {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .language-switch a {
+            color: white;
+            text-decoration: underline;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .language-switch a:hover {
+            opacity: 1;
+        }
+
+        .policy-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .toc h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style-type: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.7rem;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section p, .section ul, .section ol {
+            margin-bottom: 1rem;
+        }
+
+        .section ul, .section ol {
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section ul.contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul.contact-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight {
+            background-color: rgba(66, 153, 225, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .related-links {
+            margin-top: 1rem;
+        }
+
+        .related-links a {
+            color: var(--accent-color);
+            margin: 0 0.35rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>数据删除说明</h1>
+        <p class="last-updated">生效日期：2026年10月23日</p>
+        <p class="language-switch"><a href="en/" lang="en">English</a></p>
+    </header>
+
+    <div class="container">
+        <div class="policy-content">
+            <div class="toc">
+                <h2>目录</h2>
+                <ul>
+                    <li><a href="#request">1. 如何申请删除</a></li>
+                    <li><a href="#process">2. 我们如何处理请求</a></li>
+                    <li><a href="#scope">3. 删除范围</a></li>
+                    <li><a href="#third-party-login">4. 第三方账号登录授权</a></li>
+                    <li><a href="#impact">5. 删除后的影响</a></li>
+                    <li><a href="#contact">6. 联系方式</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="request">
+                <h2>1. 如何申请删除</h2>
+                <p>如果您希望删除 Rustfield 账号及与该账号关联的个人数据，请发送邮件至：</p>
+                <p><strong>数据删除联系邮箱：</strong><a href="mailto:34165658@qq.com">34165658@qq.com</a></p>
+                <p>邮件主题建议填写：<strong>Rustfield 数据删除请求</strong></p>
+                <p>请在邮件中提供以下信息：</p>
+                <ul>
+                    <li>您的 Rustfield 玩家 ID（如果已知）。</li>
+                    <li>您使用第三方账号登录 Rustfield 的相关说明（如有）。</li>
+                    <li>用于联系您的邮箱地址。</li>
+                    <li>您希望删除账号及相关数据的明确请求。</li>
+                </ul>
+                <p>如您通过 Facebook、Google、Apple 或其他第三方账号登录 Rustfield，均可使用本页面的流程申请删除。</p>
+                <div class="highlight">
+                    <p><strong>请勿</strong>在邮件中提供第三方账号密码、访问令牌或其他不必要的敏感信息。</p>
+                </div>
+            </div>
+
+            <div class="section" id="process">
+                <h2>2. 我们如何处理请求</h2>
+                <p>收到请求后，我们将：</p>
+                <ol>
+                    <li>核实请求是否与 Rustfield 账号有关，并进行必要的身份验证。</li>
+                    <li>确认需要删除的账号及关联数据。</li>
+                    <li>删除依法应当删除且不再具有合法保存依据的数据。</li>
+                    <li>在适用法律规定的期限内处理请求，并在合理可行的情况下通知您处理结果。</li>
+                </ol>
+                <p>如果需要补充信息，我们可能会联系您。我们不会要求您提供第三方账号密码来证明账号归属。</p>
+            </div>
+
+            <div class="section" id="scope">
+                <h2>3. 删除范围</h2>
+                <p>在适用法律允许的范围内，删除请求可能涉及：</p>
+                <ul>
+                    <li>与第三方账号登录标识关联的 Rustfield 账号数据。</li>
+                    <li>与账号关联的游戏进度及游戏状态。</li>
+                    <li>与账号关联的其他个人信息。</li>
+                </ul>
+                <p>法律要求保留或存在其他合法保留依据的记录，可能会在必要范围内继续保存，并限制其用途。</p>
+            </div>
+
+            <div class="section" id="third-party-login">
+                <h2>4. 第三方账号登录授权</h2>
+                <p>您可以通过相应第三方平台提供的账号设置或授权管理页面，管理与游戏的授权关系。</p>
+                <p>例如，Facebook 用户可以在 Facebook 的设置中管理与第三方应用的授权关系；其他平台通常也提供类似的授权管理功能。</p>
+                <p>但撤销第三方账号登录授权不一定会自动删除 Rustfield 服务器中已经保存的数据。如需删除 Rustfield 数据，请另外按照本页面说明提出请求。</p>
+            </div>
+
+            <div class="section" id="impact">
+                <h2>5. 删除后的影响</h2>
+                <p>删除请求可能导致账号、游戏进度及关联游戏数据永久丢失，且无法恢复。</p>
+                <p>如果请求涉及法律要求保留的记录，我们会根据适用法律处理相关数据，并在必要时说明无法立即删除的原因。</p>
+                <div class="highlight">
+                    <p><strong>请注意：</strong>请在提交删除请求前确认您已了解相关后果，并妥善保存需要保留的信息。</p>
+                </div>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>6. 联系方式</h2>
+                <ul class="contact-list">
+                    <li><strong>游戏名称：</strong>Rustfield</li>
+                    <li><strong>运营者：</strong>BIGMONSTER</li>
+                    <li><strong>数据删除邮箱：</strong><a href="mailto:34165658@qq.com">34165658@qq.com</a></li>
+                    <li><strong>隐私政策：</strong><a href="../privacy/">https://bigmonster.top/privacy/</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BIGMONSTER. 保留所有权利。</p>
+        <p class="related-links">
+            <a href="../privacy/">隐私政策</a> |
+            <a href="../terms/">服务条款</a> |
+            <a href="../EULA.html">用户协议（EULA）</a> |
+            <a href="en/" lang="en">English</a> |
+            <a href="../Defaultl2.html">首页</a>
+        </p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="返回顶部">↑</a>
+
+    <script>
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

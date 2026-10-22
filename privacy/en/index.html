@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how Rustfield handles personal information through third-party account login and the game service, and how to request access, correction or deletion of relevant information.">
+    <link rel="alternate" hreflang="zh-CN" href="https://bigmonster.top/privacy/">
+    <link rel="alternate" hreflang="en" href="https://bigmonster.top/privacy/en/">
+    <link rel="canonical" href="https://bigmonster.top/privacy/en/">
+    <title>Privacy Policy - Rustfield | BIGMONSTER</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .language-switch {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .language-switch a {
+            color: white;
+            text-decoration: underline;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .language-switch a:hover {
+            opacity: 1;
+        }
+
+        .policy-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .toc h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style-type: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.7rem;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .section p, .section ul, .section ol {
+            margin-bottom: 1rem;
+        }
+
+        .section ul, .section ol {
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section ul.contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul.contact-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight {
+            background-color: rgba(66, 153, 225, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .related-links {
+            margin-top: 1rem;
+        }
+
+        .related-links a {
+            color: var(--accent-color);
+            margin: 0 0.35rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Effective date: October 23, 2026 | Last updated: October 23, 2026</p>
+        <p class="language-switch"><a href="../" lang="zh-CN">中文</a></p>
+    </header>
+
+    <div class="container">
+        <div class="policy-content">
+            <div class="toc">
+                <h2>Contents</h2>
+                <ul>
+                    <li><a href="#about">1. About This Policy</a></li>
+                    <li><a href="#information">2. Information We Collect</a></li>
+                    <li><a href="#use">3. How We Use Information</a></li>
+                    <li><a href="#third-party-login">4. Third-Party Account Login and Third-Party Services</a></li>
+                    <li><a href="#sharing">5. Information Sharing</a></li>
+                    <li><a href="#security">6. Data Retention and Security</a></li>
+                    <li><a href="#rights">7. Data Deletion and Player Rights</a></li>
+                    <li><a href="#children">8. Children and Minors</a></li>
+                    <li><a href="#international">9. International Data Processing</a></li>
+                    <li><a href="#changes">10. Policy Updates</a></li>
+                    <li><a href="#contact">11. Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="about">
+                <h2>1. About This Policy</h2>
+                <p>Rustfield (the "Game") is a game service provided over the Internet and operated by an independent developer.</p>
+                <p>This Policy explains how we handle personal information when players access or use the Game, log in through a third-party account and use related features, and how players can request access to, correction of, or deletion of relevant information.</p>
+                <p>This Policy applies to the Rustfield game client and the online services related to the operation of the Game.</p>
+            </div>
+
+            <div class="section" id="information">
+                <h2>2. Information We Collect</h2>
+                <p>Depending on the features you use and the actual technical implementation, we may process the following information:</p>
+
+                <h3>2.1 Third-Party Account Login Information</h3>
+                <p>When you log in through a third-party account login service (such as Facebook, Google, Apple or another applicable provider), we receive the information that the relevant third-party platform provides to this application within the scope of your authorization. The specific login options available depend on the features actually offered by the Game; the specific scope of information depends on the permissions actually requested and the login implementation, and may include:</p>
+                <ul>
+                    <li>Your user identifier with the third-party platform, used to identify your account in the Game.</li>
+                    <li>The name or profile picture in your public profile, but only if the application actually obtains such information.</li>
+                    <li>Your email address, but only if you authorize it and the third-party platform actually provides it.</li>
+                </ul>
+                <p>We do not ask you to provide your third-party account password to Rustfield, and we do not actively collect your third-party account password.</p>
+
+                <h3>2.2 Game Account and Progress</h3>
+                <p>To provide the game service, we may process:</p>
+                <ul>
+                    <li>The Rustfield game account identifier associated with your third-party platform user identifier.</li>
+                    <li>Game progress, player level and in-game state.</li>
+                    <li>Configuration, operation and server interaction records necessary to run the Game.</li>
+                </ul>
+                <p>The data actually stored depends on the features implemented in the Game.</p>
+
+                <h3>2.3 Technical and Security Information</h3>
+                <p>When you access the Game, our servers or hosting services may process technical information necessary to operate the service, such as IP address, access time, device or browser information, error logs and security records.</p>
+                <p>We determine the scope of collection based on the infrastructure and technical configuration actually used, and we do not describe information that is not actually collected as being collected.</p>
+            </div>
+
+            <div class="section" id="use">
+                <h2>3. How We Use Information</h2>
+                <p>We use relevant information only within a reasonable and necessary scope, including:</p>
+                <ul>
+                    <li>Verifying third-party account login and identifying player accounts.</li>
+                    <li>Creating or linking game accounts.</li>
+                    <li>Saving, synchronizing and restoring game progress.</li>
+                    <li>Providing online services necessary to run the Game.</li>
+                    <li>Troubleshooting, maintaining servers and protecting account security.</li>
+                    <li>Detecting cheating, fraud, unauthorized access and other security issues.</li>
+                    <li>Responding to player support requests and processing data deletion requests.</li>
+                    <li>Complying with obligations under applicable law.</li>
+                </ul>
+                <p>We do not use third-party account login information for purposes inconsistent with this Policy.</p>
+            </div>
+
+            <div class="section" id="third-party-login">
+                <h2>4. Third-Party Account Login and Third-Party Services</h2>
+                <p>The Game provides authentication through third-party account login services. The specific login options available depend on the features actually offered by the Game.</p>
+                <p>The relevant third-party platform processes relevant information in accordance with its own terms and privacy policy. Please refer to the terms and privacy policy provided by the login platform you use.</p>
+                <p>To operate the Game, we may use server hosting, databases or other technical services. These services may process game data to the extent necessary to provide their services.</p>
+                <p>We do not sell players' personal information, and we do not store third-party account login credentials as game account passwords.</p>
+            </div>
+
+            <div class="section" id="sharing">
+                <h2>5. Information Sharing</h2>
+                <p>We do not sell your personal information.</p>
+                <p>In the following necessary circumstances, relevant information may be provided to other parties:</p>
+                <ul>
+                    <li>To server, database or infrastructure service providers that assist in operating the Game, to the extent necessary.</li>
+                    <li>Where required by applicable law, valid legal process or a lawful request from a competent authority.</li>
+                    <li>Where necessary and lawful to investigate security incidents, prevent fraud or protect the security of players and the service.</li>
+                </ul>
+                <p>If the Game adds advertising, analytics, payment or other third-party features in the future, we will update this Policy based on the actual data processing and obtain any necessary authorization required by law.</p>
+            </div>
+
+            <div class="section" id="security">
+                <h2>6. Data Retention and Security</h2>
+                <p>We retain information only for as long as necessary to provide the game service, maintain security or comply with legal obligations.</p>
+                <p>We take reasonable measures to protect data against unauthorized access, disclosure, alteration or loss. However, Internet transmission and electronic storage cannot be guaranteed to be absolutely secure.</p>
+                <p>If we stop operating the Game, or if relevant data no longer has a lawful and necessary retention purpose, we will handle the relevant data in accordance with applicable law.</p>
+            </div>
+
+            <div class="section" id="rights">
+                <h2>7. Data Deletion and Player Rights</h2>
+                <p>You may request deletion of your Rustfield account and personal data associated with you.</p>
+                <p>Please submit your request through the following channel:</p>
+                <p><strong>Data deletion contact email:</strong> <a href="mailto:34165658@qq.com">34165658@qq.com</a></p>
+                <p>Please provide your Rustfield player identifier or account-related information where possible so that we can identify the relevant account. Please do not send passwords or other unnecessary sensitive information.</p>
+                <p>We may ask you to complete reasonable identity verification to prevent others from deleting your data without authorization.</p>
+                <p>We will process requests in accordance with applicable law. Some records that we are required to retain or permitted to continue retaining by law may not be deleted immediately.</p>
+                <p>For detailed steps, please see the Game's <a href="../../data-deletion/en/">Data Deletion Instructions</a>.</p>
+            </div>
+
+            <div class="section" id="children">
+                <h2>8. Children and Minors</h2>
+                <p>The target age for the Game and the rules for minors' use are determined by applicable law and the age rating displayed for the Game in the relevant distribution channels.</p>
+                <p>If applicable law requires guardian consent or additional protective measures, we will handle personal information in accordance with the relevant law.</p>
+                <p>If you believe that a minor has provided personal information to us without necessary authorization, please contact us through the contact details in this Policy.</p>
+            </div>
+
+            <div class="section" id="international">
+                <h2>9. International Data Processing</h2>
+                <p>The Game may use servers and technical services located in different countries or regions. Depending on the actual deployment, relevant data may be processed or stored outside your region.</p>
+                <p>If applicable law imposes requirements on cross-border data transfers, we will take the necessary measures in accordance with the law.</p>
+            </div>
+
+            <div class="section" id="changes">
+                <h2>10. Policy Updates</h2>
+                <p>We may update this Policy based on changes to game features, technical implementation or applicable law.</p>
+                <p>The updated version will be posted on this page with the last updated date indicated. For changes requiring separate notice or consent under law, we will handle them in accordance with the law.</p>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>11. Contact Us</h2>
+                <ul class="contact-list">
+                    <li><strong>Game:</strong> Rustfield</li>
+                    <li><strong>Operator:</strong> BIGMONSTER</li>
+                    <li><strong>Privacy and data deletion contact email:</strong> <a href="mailto:34165658@qq.com">34165658@qq.com</a></li>
+                    <li><strong>Data Deletion Instructions:</strong> <a href="../../data-deletion/en/">https://bigmonster.top/data-deletion/en/</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BIGMONSTER. All rights reserved.</p>
+        <p class="related-links">
+            <a href="../" lang="zh-CN">中文</a> |
+            <a href="../../terms/en/">Terms of Service</a> |
+            <a href="../../data-deletion/en/">Data Deletion</a> |
+            <a href="../../EULA_BIGMONSTER.html">EULA</a> |
+            <a href="../../index.html">Home</a>
+        </p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <script>
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>

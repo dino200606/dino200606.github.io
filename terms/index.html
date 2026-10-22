@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="了解使用 Rustfield 游戏及相关在线服务时适用的账号登录、游戏规则、虚拟内容、责任与联系方式等条款。">
+    <link rel="alternate" hreflang="zh-CN" href="https://bigmonster.top/terms/">
+    <link rel="alternate" hreflang="en" href="https://bigmonster.top/terms/en/">
+    <link rel="canonical" href="https://bigmonster.top/terms/">
+    <title>服务条款 - Rustfield | BIGMONSTER</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .language-switch {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .language-switch a {
+            color: white;
+            text-decoration: underline;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .language-switch a:hover {
+            opacity: 1;
+        }
+
+        .policy-content {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .toc {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .toc h2 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .toc ul {
+            list-style-type: none;
+        }
+
+        .toc li {
+            margin-bottom: 0.7rem;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section p, .section ul, .section ol {
+            margin-bottom: 1rem;
+        }
+
+        .section ul, .section ol {
+            padding-left: 1.5rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section ul.contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section ul.contact-list li {
+            margin-bottom: 0.6rem;
+        }
+
+        .highlight {
+            background-color: rgba(66, 153, 225, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .related-links {
+            margin-top: 1rem;
+        }
+
+        .related-links a {
+            color: var(--accent-color);
+            margin: 0 0.35rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .policy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>服务条款</h1>
+        <p class="last-updated">生效日期：2026年10月23日 | 最后更新：2026年10月23日</p>
+        <p class="language-switch"><a href="en/" lang="en">English</a></p>
+    </header>
+
+    <div class="container">
+        <div class="policy-content">
+            <div class="toc">
+                <h2>目录</h2>
+                <ul>
+                    <li><a href="#scope">1. 条款适用范围</a></li>
+                    <li><a href="#operator">2. 运营者与联系方式</a></li>
+                    <li><a href="#account">3. 账号与登录</a></li>
+                    <li><a href="#rules">4. 游戏规则</a></li>
+                    <li><a href="#fairness">5. 游戏内容与公平性</a></li>
+                    <li><a href="#service">6. 服务更新与中断</a></li>
+                    <li><a href="#virtual">7. 虚拟资源与付费</a></li>
+                    <li><a href="#enforcement">8. 违规处理</a></li>
+                    <li><a href="#ip">9. 知识产权</a></li>
+                    <li><a href="#third-party">10. 第三方服务</a></li>
+                    <li><a href="#liability">11. 责任与法律限制</a></li>
+                    <li><a href="#changes">12. 条款更新</a></li>
+                    <li><a href="#governing-law">13. 适用法律与争议</a></li>
+                    <li><a href="#contact">14. 联系方式</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="scope">
+                <h2>1. 条款适用范围</h2>
+                <p>欢迎使用 Rustfield。</p>
+                <p>本服务条款适用于您访问和使用 Rustfield 游戏及相关在线服务的行为。使用本游戏即表示您同意遵守本条款及适用法律。</p>
+                <div class="highlight">
+                    <p><strong>重要提示：</strong>如果您不同意本条款，请停止使用本游戏。</p>
+                </div>
+            </div>
+
+            <div class="section" id="operator">
+                <h2>2. 运营者与联系方式</h2>
+                <p>Rustfield 目前由个人开发者运营。</p>
+                <ul class="contact-list">
+                    <li><strong>运营者名称：</strong>BIGMONSTER</li>
+                    <li><strong>联系邮箱：</strong><a href="mailto:34165658@qq.com">34165658@qq.com</a></li>
+                </ul>
+            </div>
+
+            <div class="section" id="account">
+                <h2>3. 账号与登录</h2>
+                <p>本游戏通过第三方账号登录服务提供身份验证，具体可用的登录方式以游戏实际提供的功能为准。</p>
+                <p>您应通过相应第三方平台的官方授权流程登录，不得冒用他人身份或未经授权使用他人账号。</p>
+                <p>您应遵守相关第三方平台对登录服务的规则。若您的第三方平台账号或授权状态发生变化，您可能无法继续使用相应登录功能。</p>
+                <p>请勿尝试绕过身份验证、盗用其他玩家账号或以其他方式破坏账号安全。</p>
+            </div>
+
+            <div class="section" id="rules">
+                <h2>4. 游戏规则</h2>
+                <p>您不得：</p>
+                <ul>
+                    <li>使用外挂、作弊工具或未经授权的自动化程序。</li>
+                    <li>利用漏洞获取不当利益或破坏游戏公平性。</li>
+                    <li>未经授权访问、攻击或干扰游戏服务器。</li>
+                    <li>利用游戏从事欺诈、骚扰、威胁或其他违法行为。</li>
+                    <li>侵害其他玩家或第三方的合法权益。</li>
+                    <li>以其他违反适用法律或游戏规则的方式使用本服务。</li>
+                </ul>
+            </div>
+
+            <div class="section" id="fairness">
+                <h2>5. 游戏内容与公平性</h2>
+                <p>我们可能根据游戏运行和公平竞争的需要，调整游戏规则、平衡性、资源数值、战斗机制及其他游戏内容。</p>
+                <p>我们会在合理范围内维护游戏公平性，并处理已发现的作弊、欺诈及安全问题。</p>
+                <p>如果您发现漏洞或安全问题，请通过本条款所列联系方式向我们报告，不要利用漏洞损害其他玩家或服务。</p>
+            </div>
+
+            <div class="section" id="service">
+                <h2>6. 服务更新与中断</h2>
+                <p>我们可能因更新、维护、故障排查、安全事件或其他合理原因调整、暂停部分游戏功能。</p>
+                <p>我们会在合理可行的情况下尽力恢复服务，但不保证游戏始终不间断运行或完全不存在错误。</p>
+            </div>
+
+            <div class="section" id="virtual">
+                <h2>7. 虚拟资源与付费</h2>
+                <p>截至本条款生效日期，Rustfield 暂未开放付费功能。</p>
+                <p>如果游戏中提供虚拟资源、游戏进度或其他虚拟内容，这些内容属于游戏服务的一部分，其功能及使用规则由游戏实际规则决定。</p>
+                <p>我们未来若开放付费功能，将根据实际服务另行公布适用的购买、支付和退款规则。本条款不排除适用法律规定的消费者权利。</p>
+            </div>
+
+            <div class="section" id="enforcement">
+                <h2>8. 违规处理</h2>
+                <p>如果我们有合理依据认为您存在作弊、欺诈、攻击服务、滥用游戏功能或其他严重违反本条款的行为，我们可以根据情况采取警告、限制功能、暂停账号访问或终止服务等措施。</p>
+                <p>在适用法律要求的情况下，我们会履行必要的通知或申诉程序。</p>
+            </div>
+
+            <div class="section" id="ip">
+                <h2>9. 知识产权</h2>
+                <p>Rustfield 游戏中的软件、界面、文字、美术、音效、商标及其他内容，其相关权利归合法权利人所有。</p>
+                <p>除适用法律明确允许或取得权利人授权外，您不得擅自复制、修改、传播、出售或以其他方式利用受保护的内容。</p>
+                <p>使用本游戏不意味着您取得相关内容的所有权。</p>
+            </div>
+
+            <div class="section" id="third-party">
+                <h2>10. 第三方服务</h2>
+                <p>本游戏可能使用第三方账号登录服务（例如 Facebook、Google、Apple 或其他适用平台），具体以游戏实际提供的功能为准。</p>
+                <p>您使用第三方账号登录时，也应遵守相应平台的条款及政策。第三方服务的可用性可能影响本游戏的部分功能。</p>
+            </div>
+
+            <div class="section" id="liability">
+                <h2>11. 责任与法律限制</h2>
+                <p>我们会采取合理措施维护游戏服务，但不保证服务始终可用、没有错误或满足所有特定需求。</p>
+                <p>在适用法律允许的范围内，我们不对超出合理控制范围的服务中断或第三方服务故障承担超出法律规定的责任。</p>
+                <p>本条款不排除或限制适用法律禁止排除或限制的责任及权利。</p>
+            </div>
+
+            <div class="section" id="changes">
+                <h2>12. 条款更新</h2>
+                <p>我们可能因游戏功能、运营方式或适用法律的变化更新本条款。</p>
+                <p>更新后的版本将发布在本页面，并注明最后更新日期。法律要求通知或取得同意的重大变更，将依法处理。</p>
+            </div>
+
+            <div class="section" id="governing-law">
+                <h2>13. 适用法律与争议</h2>
+                <p>本条款的适用法律及争议处理方式，应根据运营者所在地、游戏服务面向的市场及适用法律确定。</p>
+                <p>在适用法律允许的范围内，本条款不排除您依法享有的消费者保护或其他不可放弃的法定权利。</p>
+                <p>如您对本条款或相关争议有疑问，可通过第 14 节的联系方式与我们联系。</p>
+            </div>
+
+            <div class="section" id="contact">
+                <h2>14. 联系方式</h2>
+                <ul class="contact-list">
+                    <li><strong>游戏名称：</strong>Rustfield</li>
+                    <li><strong>运营者：</strong>BIGMONSTER</li>
+                    <li><strong>联系邮箱：</strong><a href="mailto:34165658@qq.com">34165658@qq.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 BIGMONSTER. 保留所有权利。</p>
+        <p class="related-links">
+            <a href="../privacy/">隐私政策</a> |
+            <a href="../data-deletion/">数据删除说明</a> |
+            <a href="../EULA.html">用户协议（EULA）</a> |
+            <a href="en/" lang="en">English</a> |
+            <a href="../Defaultl2.html">首页</a>
+        </p>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="返回顶部">↑</a>
+
+    <script>
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+</html>
